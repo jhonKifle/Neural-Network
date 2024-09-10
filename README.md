@@ -6,4 +6,4 @@ Depening on the size of images (28X28), the NN implemented in this project conta
   - [x] Sigmoid function is used as activation function.
   - [x] Stochastic Descenet Gradient for updating weights and biases
 
-[!NOTE] For this network 1-hidden layer is used with 30 neurons. Readers can try with different sets for the parameters of the net including number of layers, size of each layer.
+> [!NOTE] For this network 1-hidden layer is used with 30 neurons. Readers can try with different sets for the parameters of the net including number of layers, size of each layer.
