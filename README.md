@@ -2,7 +2,7 @@
 
 This projects implements neural nets using numpy library to train MNIST dataset to recognize handwritten digits. The dataset contains 20K , 10K images sets for training and testing scenarios respectively.
 Depening on the size of images (28X28), the NN implemented in this project contains 784 neurons at the input layer, and 10 neurons at the output layer. The following key terms are taken into considerations in implementing the project:
-  [x] Hot-encoding is used to represent output labels.
+  -[x] Hot-encoding is used to represent output labels.
   - [x] Sigmoid function is used as activation function.
   - [x] Stochastic Descenet Gradient for updating weights and biases
 
