@@ -13,20 +13,22 @@ Depening on the size of images (28X28), the NN implemented in this project conta
 
 
 # Task 1
-### 1.1 In your own words, describe the main differences and possible benefits of the two algorithms (~1/4 page)
-### 1.2 For the Mealy machine below, define (S, s0, ∑, Ω)
+#### 1.1 In your own words, describe the main differences and possible benefits of the two algorithms (~1/4 page)
+- In L<sup>&ast;</sup><sub>M</sub> the model is constructed incrementally i.e., in every round the model gets expanding its tree. On the otherhand, in DHC the hypothesis automata is constructed from scratch in each round. At the end of each round in DHC algorithm, the Counterexamples introduce their suffixes to set of distinguishing suffixes D. This leads DHC to have worst algorithm complexity compared to L<sup>&ast;</sup><sub>M</sub>.
+- In DHC, all suffixes to Counterexample is added to D, whereas in L<sup>&ast;</sup><sub>M</sub> exactly one suffice of each CounterExample is added, which relieves the complexity burden to unneccessary membership queries.
+- Benefits: DHC is more simple and eases hypothesis construction, on the otherhand L<sup>&ast;</sup><sub>M</sub> with the repetitive tasks of optimization process gets complicated. In addition, L<sup>&ast;</sup><sub>M</sub> converges faster compared to HDC.
+#### 1.2 For the Mealy machine below, define (S, s0, ∑, Ω)
       S   = { a ,b ,c}
       s0  = a
       ∑  = {receiveApplication, documentsComplete, documentsIncomplete}
       Ω  = {OK , NOK, DONE}
 
-### 1.3 For the same Mealy machine, produce the final observation table by applying the L*M algorithm, and explain the steps involved (~1/4 page)
+#### 1.3 For the same Mealy machine, produce the final observation table by applying the L*M algorithm, and explain the steps involved (~1/4 page)
 Steps: <br />
-A) Initializing Sp as {} and D as ∑, result in observation table containing the Sp {1} and Lp {A,B,C}.  <br />
-B) The row Lp{A} does not match SP{1}, thus Sp expanded by ‘receiveApplication’ and the Lp accordingly. <br />
-&nbsp; &nbsp; &nbsp; Resulting in Sp {1 ,2}, Lp {A,B,C,D,E}.  <br />
-C) Lp {D,E} does not match with Sp {1,2}. This further expands Sp by Lp {D}, forming Sp {1,2,3}, Lp {
-As it is shown in the table, the observation table is not closed since the row for the prefix “receiveApplication” does not match the row of &epsi; . This results in expanding Sp by ‘receiveApplication’ and the Lp accordingly. <br />
+- A) Initializing Sp as {} and D as ∑, result in observation table containing the Sp {1} and Lp {A,B,C}.  <br />
+- B) The row Lp{A} does not match SP{1}, thus Sp expanded by ‘receiveApplication’ and the Lp accordingly. <br /> &nbsp; &nbsp; &nbsp; Resulting in Sp {1 ,2}, Lp {A,B,C,D,E,F}.  <br />
+- C) Lp {D,E} does not match with Sp {1,2}. This further expands Sp by Lp {D}, forming Sp {1,2,3}, and Lp {A,B,C,D,E,F,G,H,I}.
+- D) Lastly, Lp{E} does not match entry in Sp {1,2,3}; thus, entries updated as Sp{1,2,3,4} and Lp{A,B,C,D,E,F,G,H,I,J,K,L}. This stage having all the rows in Lp matching with rows in SP, the observation table Closed. <br />
 
 | | S.N  |   | receiveApplication  | documentsComplete  |  documentsIncomplete |
 |---|---|---|---|---|---|
@@ -43,12 +45,12 @@ As it is shown in the table, the observation table is not closed since the row f
 | |G|receiveApplication &bull; receiveApplication &bull; receiveApplication | NOK | OK | NOK |
 | |H|receiveApplication &bull; receiveApplication &bull; documentComplete |DONE |DONE |DONE|
 | |I|receiveApplication &bull; receiveApplication &bull; documentIncomplete| OK  |  OK | OK  |
-| |G|receiveApplication &bull; documentComplete &bull; receiveApplication |DONE |DONE |DONE|
-| |H|receiveApplication &bull; documentComplete &bull; documentComplete|DONE |DONE |DONE |
-| |I|receiveApplication &bull; documentComplete &bull; documentIncomplete|DONE|DONE|DONE|
+| |J|receiveApplication &bull; documentComplete &bull; receiveApplication |DONE |DONE |DONE|
+| |K|receiveApplication &bull; documentComplete &bull; documentComplete|DONE |DONE |DONE |
+| |L|receiveApplication &bull; documentComplete &bull; documentIncomplete|DONE|DONE|DONE|
 
 
 
-
+# Task 2
 
 
