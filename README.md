@@ -21,9 +21,12 @@ Depening on the size of images (28X28), the NN implemented in this project conta
       Ω  = {OK , NOK, DONE}
 
 ### 1.3 For the same Mealy machine, produce the final observation table by applying the L*M algorithm, and explain the steps involved (~1/4 page)
-A) Initializing Sp as {} and D as ∑, result in observation table containing the first row in Sp and first 3 rows in Lp.  <br />
-B) As it is shown in the table, the observation table is not closed since the row for the prefix “receiveApplication” does not match the row of &epsi; . This results in expanding Sp by ‘receiveApplication’ and the Lp accordingly. <br />
-C) 
+Steps: <br />
+A) Initializing Sp as {} and D as ∑, result in observation table containing the Sp {1} and Lp {A,B,C}.  <br />
+B) The row Lp{A} does not match SP{1}, thus Sp expanded by ‘receiveApplication’ and the Lp accordingly. <br />
+&nbsp; &nbsp; &nbsp; Resulting in Sp {1 ,2}, Lp {A,B,C,D,E}.  <br />
+C) Lp {D,E} does not match with Sp {1,2}. This further expands Sp by Lp {D}, forming Sp {1,2,3}, Lp {
+As it is shown in the table, the observation table is not closed since the row for the prefix “receiveApplication” does not match the row of &epsi; . This results in expanding Sp by ‘receiveApplication’ and the Lp accordingly. <br />
 
 | | S.N  |   | receiveApplication  | documentsComplete  |  documentsIncomplete |
 |---|---|---|---|---|---|
@@ -35,8 +38,11 @@ C)
 | |B|documentComplete |OK |OK |OK|
 | |C|documentIncomplete |OK |OK |OK |
 | |D|$${\color{red} receiveApplication &bull; receiveApplication }$$|$${\color{red}NOK}$$ |$${\color{red} OK}$$ | $${\color{red}NOK}$$ |
-| |e|$${\color{red} receiveApplication &bull; documentComplete }$$|$${\color{red} DONE }$$| $${\color{red}DONE}$$ | $${\color{red}DONE }$$|
+| |E|$${\color{red} receiveApplication &bull; documentComplete }$$|$${\color{red} DONE }$$| $${\color{red}DONE}$$ | $${\color{red}DONE }$$|
 | |F|receiveApplication &bull; documentIncomplete |OK|OK|OK|
+| |G|receiveApplication &bull; receiveApplication &bull; receiveApplication | NOK | OK | NOK |
+| |H|receiveApplication &bull; receiveApplication &bull; documentComplete |DONE |DONE |DONE|
+| |I|receiveApplication &bull; receiveApplication &bull; documentIncomplete| OK  |  OK | OK  |
 | |G|receiveApplication &bull; documentComplete &bull; receiveApplication |DONE |DONE |DONE|
 | |H|receiveApplication &bull; documentComplete &bull; documentComplete|DONE |DONE |DONE |
 | |I|receiveApplication &bull; documentComplete &bull; documentIncomplete|DONE|DONE|DONE|
