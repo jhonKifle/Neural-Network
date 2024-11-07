@@ -13,14 +13,20 @@ Depening on the size of images (28X28), the NN implemented in this project conta
 
 
 # Task 1
-## 1.1 In your own words, describe the main differences and possible benefits of the two algorithms (~1/4 page)
-## 1.2 For the Mealy machine below, define (S, s0, ∑, Ω)
+### 1.1 In your own words, describe the main differences and possible benefits of the two algorithms (~1/4 page)
+### 1.2 For the Mealy machine below, define (S, s0, ∑, Ω)
       S   = { a ,b ,c}
       s0  = a
       ∑  = {receiveApplication, documentsComplete, documentsIncomplete}
       Ω  = {OK , NOK, DONE}
 
-## 1.3 For the same Mealy machine, produce the final observation table by applying the L*M algorithm, and explain the steps involved (~1/4 page)
-### Initializing Sp as {} and D as ∑ results in the observation table in below:
-As it is shown in the table, the observation table is not closed since the row for the prefix “receiveApplication” does not match the row of . This results in expanding Sp by ‘receiveApplication’ and the Lp accordingly.
+### 1.3 For the same Mealy machine, produce the final observation table by applying the L*M algorithm, and explain the steps involved (~1/4 page)
+A) Initializing Sp as {} and D as ∑ results in the observation table in below:
+B) As it is shown in the table, the observation table is not closed since the row for the prefix “receiveApplication” does not match the row of . This results in expanding Sp by ‘receiveApplication’ and the Lp accordingly.
+C) 
+
+
+
+
+
 
