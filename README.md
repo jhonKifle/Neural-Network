@@ -25,21 +25,21 @@ A) Initializing Sp as {} and D as ∑, result in observation table containing th
 B) As it is shown in the table, the observation table is not closed since the row for the prefix “receiveApplication” does not match the row of &epsi; . This results in expanding Sp by ‘receiveApplication’ and the Lp accordingly. <br />
 C) 
 
-|   |   | receiveApplication  | documentsComplete  |  documentsIncomplete |
-|---|---|---|---|---|
-| Sp  |  &epsi;  | OK  |  OK | OK  |
-|   | receiveApplication  | OK  | OK  |  NOK |
-|   | receiveApplication &bull; receiveApplication &bull; receiveApplication  |  NOK |  OK  | NOK  |
-|   | receiveApplication &bull; receiveApplication &bull; receiveApplication &bull; receiveApplication &bull; documentComplete  | DONE  |  DONE | DONE  |
-|Lp   |receiveApplication |<span style="color:blue"> NOK </span>|OK |NOK | 
-| |documentComplete |OK |OK |OK|
-| |documentIncomplete |OK |OK |OK |
-| |receiveApplication &bull; receiveApplication |NOK | OK | NOK |
-| |receiveApplication &bull; documentComplete | DONE | DONE | DONE |
-| |receiveApplication &bull; documentIncomplete |OK|OK|OK|
-| |receiveApplication &bull; documentComplete &bull; receiveApplication |DONE |DONE |DONE|
-| |receiveApplication &bull; documentComplete &bull; documentComplete|DONE |DONE |DONE |
-| |receiveApplication &bull; documentComplete &bull; documentIncomplete|DONE|DONE|DONE|
+| | S.N  |   | receiveApplication  | documentsComplete  |  documentsIncomplete |
+|---|---|---|---|---|---|
+| Sp| 1  |  &epsi;  | OK  |  OK | OK  |
+|   | 2 | receiveApplication  | OK  | OK  |  NOK |
+|   | 3 |receiveApplication &bull; receiveApplication &bull; receiveApplication  |  NOK |  OK  | NOK  |
+|   | 4|  receiveApplication &bull; receiveApplication &bull; receiveApplication &bull; receiveApplication &bull; documentComplete  | DONE  |  DONE | DONE  |
+|Lp |A|$${\color{red} receiveApplication }$$|$${\color{red}NOK }$$|$${\color{red}OK }$$|$${\color{red}NOK}$$ | 
+| |B|documentComplete |OK |OK |OK|
+| |C|documentIncomplete |OK |OK |OK |
+| |D|$${\color{red} receiveApplication &bull; receiveApplication }$$|$${\color{red}NOK}$$ |$${\color{red} OK}$$ | $${\color{red}NOK}$$ |
+| |e|$${\color{red} receiveApplication &bull; documentComplete }$$|$${\color{red} DONE }$$| $${\color{red}DONE}$$ | $${\color{red}DONE }$$|
+| |F|receiveApplication &bull; documentIncomplete |OK|OK|OK|
+| |G|receiveApplication &bull; documentComplete &bull; receiveApplication |DONE |DONE |DONE|
+| |H|receiveApplication &bull; documentComplete &bull; documentComplete|DONE |DONE |DONE |
+| |I|receiveApplication &bull; documentComplete &bull; documentIncomplete|DONE|DONE|DONE|
 
 
 
