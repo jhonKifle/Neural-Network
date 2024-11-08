@@ -1,17 +1,3 @@
-# Neural Network Using Numpy
-
-This projects implements neural nets using numpy library to train MNIST dataset to recognize handwritten digits. The dataset contains 20K , 10K images sets for training and testing scenarios respectively.
-Depening on the size of images (28X28), the NN implemented in this project contains 784 neurons at the input layer, and 10 neurons at the output layer. The following key terms are taken into considerations in implementing the project:
-  - [x] Hot-encoding is used to represent output labels.
-  - [x] Sigmoid function is used as activation function.
-  - [x] Stochastic Descenet Gradient for updating weights and biases
-
-> [!NOTE]
-> For this network 1-hidden layer is used with 30 neurons. Readers can try with different sets for the parameters of the net including number of layers, size of each layer.
-
-
-
-
 # Task 1
 #### 1.1 In your own words, describe the main differences and possible benefits of the two algorithms (~1/4 page)
 - In L<sup>&ast;</sup><sub>M</sub> the model is constructed incrementally i.e., in every round the model gets expanding its tree. On the otherhand, in DHC the hypothesis automata is constructed from scratch in each round. At the end of each round in DHC algorithm, the Counterexamples introduce their suffixes to set of distinguishing suffixes D. This leads DHC to have worst algorithm complexity compared to L<sup>&ast;</sup><sub>M</sub>.
